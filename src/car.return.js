@@ -17,13 +17,13 @@ function Car(make, model, year, color){
 Car.prototype.sale = function(newOwner){
 	this.previousOwners.push(this.currentOwner);
 	this.currentOwner= newOwner;
-	return newOwner;
+	return "the new owner is "+ newOwner;
 };
 
 //* `Car#paint`, which should take a new color and update the color of the car to be new color.
 Car.prototype.paint = function(newColor){
 	this.color=newColor;
-	return newColor;
+	return "The new paint color is "+ newColor;
 };
 
 // * `Car#start` should change the state of the car to `on`.
@@ -33,28 +33,28 @@ Car.prototype.paint = function(newColor){
 
 Car.prototype.start = function(){
 	this.state="on";
-	return this.state;
+	return "The Car is now " + this.state;
 };
 
 Car.prototype.off = function() {
 	this.state="off";
-	return this.state;
+	return "The Car is now " + this.state;
 };
 
 Car.prototype.driveTo = function(destination){
 	if(this.state === "on"){
-		console.log("driving to "+destination);
+		return "driving to "+destination;
 	}else{
-	console.log("Car isn't on!");
+	return "Car isn't on!";
 }
-	return
+	
 }
 
 Car.prototype.park=function() {
 	if(this.state === "off"){
-		console.log("parked!!");
+		return "The car is now parked!!";
 	}
-	return
+	
 }
 
 // ## Phase III 
@@ -76,10 +76,10 @@ Car.prototype.park=function() {
 
 Car.prototype.pick_up=function(name) {
 	if(this.state === "on"){
-	console.log("driving to pick up"+name);
+	return "driving to pick up"+name;
 	this.passengers.push(name);
 }	else{
-	console.log("Car isn't on!");
+	return "Car isn't on!";
 }
 return
 }
@@ -87,9 +87,9 @@ return
 Car.prototype.dropOff= function(name){
 	if((this.state ==="on") && (name === this.passengers[0])){
 		this.passengers.pop(name);
-		console.log("Dropping off "+ name);
+		return "Dropping off "+ name;
 	}else {
-		console.log(name+ " isn't here!");
+		return name+ " isn't here!";
 	}
 
 return;
@@ -97,15 +97,15 @@ return;
 
 var davesCar = new Car("VW","Rabbit", "2009", "Black");
 // davesCar.state
-// console.log(davesCar);
-// console.log(davesCar.sale("Your Mom"));
-// console.log(davesCar.previousOwners);
-// console.log(davesCar.paint("Red"));
-// console.log(davesCar.start());
-// console.log(davesCar.off());
-// console.log(davesCar.start());
-// console.log(davesCar);
-// console.log(davesCar.driveTo("Los Angeles"));
+davesCar
+davesCar.sale("Your Mom")
+davesCar.previousOwners;
+davesCar.paint("Red");
+console.log(davesCar.start());
+console.log(davesCar.off());
+console.log(davesCar.start());
+console.log(davesCar);
+console.log(davesCar.driveTo("Los Angeles"));
 // console.log(davesCar);
 // console.log(davesCar.start());
 // console.log(davesCar.off());
